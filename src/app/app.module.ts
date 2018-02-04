@@ -6,6 +6,14 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers/index';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { REDUX_DEV_TOOLS_OPTIONS } from './constants/global.constants';
+import { environment } from '../environments/environment';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -13,8 +21,17 @@ import { REDUX_DEV_TOOLS_OPTIONS } from './constants/global.constants';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    // HttpClient,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument(REDUX_DEV_TOOLS_OPTIONS)
+    environment.development ? StoreDevtoolsModule.instrument(REDUX_DEV_TOOLS_OPTIONS) : [],
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
