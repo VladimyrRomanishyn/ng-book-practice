@@ -1,7 +1,18 @@
-<select #langSelect (change)="translateService.use(langSelect.value)">
-  <option *ngFor="let lang of translateService.getLangs()" [value]="lang" [selected]="lang === translateService.currentLang">{{ lang }}</option>
-</select>
-<div>{{globalState | json}}</div>
-<div>{{"title" | translate}}</div>
-<div>{{"test" | translate}}</div>
+<!--<select #langSelect (change)="translateService.use(langSelect.value)">-->
+  <!--<option *ngFor="let lang of translateService.getLangs()" [value]="lang" [selected]="lang === translateService.currentLang">{{ lang }}</option>-->
+<!--</select>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<div>{{globalState | json}}</div>-->
+<!--<div>{{"title" | translate}}</div>-->
+<!--<div>{{"test" | translate}}</div>-->
+<nav>
+  <a routerLink="advanced-components">advanced-components</a>
+  <a routerLink="data-architecture">data-architecture</a>
+  <a routerLink="dependency-injection">dependency-injection</a>
+  <a routerLink="forms">forms</a>
+</nav>
+<router-outlet></router-outlet>
 
