@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TestingRoutingModule } from './testing-routing.module';
+import { HttpRoutingModule } from './http-routing.module';
 import { EntryComponent } from './components/entry.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    TestingRoutingModule
+    HttpRoutingModule
   ],
   declarations: [EntryComponent]
 })
-export class TestingModule { }
+export class HttpPartModule { }

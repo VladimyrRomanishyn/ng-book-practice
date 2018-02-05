@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const childRoutes: Routes = [
+  {
+    path: '',
+    loadChildren: './modules/home-module/home.module#HomeModule'
+  },
   { path: 'advanced-components',
     loadChildren: './modules/advanced-components/advanced-components.module#AdvancedComponentsModule'
   },
@@ -14,6 +18,26 @@ const childRoutes: Routes = [
   {
     path: 'forms',
     loadChildren: './modules/forms-test/forms-test.module#FormsTestModule'
+  },
+  {
+    path: 'http',
+    loadChildren: './modules/http-part/http-part.module#HttpPartModule'
+  },
+  {
+    path: 'redux',
+    loadChildren: './modules/redux/redux.module#ReduxModule'
+  },
+  {
+    path: 'routing',
+    loadChildren: './modules/routing/routing.module#RoutingModule'
+  },
+  {
+    path: 'structural-directives',
+    loadChildren: './modules/structural-directives/structural-directives.module#StructuralDirectivesModule'
+  },
+  {
+    path: 'testing',
+    loadChildren: './modules/testing/testing.module#TestingModule'
   }
 ]
 
