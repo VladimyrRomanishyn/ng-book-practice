@@ -42,7 +42,7 @@ const childRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(childRoutes, {initalNavigation: true})],
+  imports: [RouterModule.forRoot(childRoutes, { initialNavigation: 'enabled'})],
   exports: [RouterModule]
 })
 
