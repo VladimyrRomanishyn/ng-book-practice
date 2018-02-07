@@ -39,10 +39,10 @@ const childRoutes: Routes = [
     path: 'testing',
     loadChildren: './modules/testing/testing.module#TestingModule'
   }
-]
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(childRoutes)],
+  imports: [RouterModule.forRoot(childRoutes, {initalNavigation: true})],
   exports: [RouterModule]
 })
 
