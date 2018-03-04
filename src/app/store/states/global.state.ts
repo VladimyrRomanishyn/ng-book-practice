@@ -1,9 +1,9 @@
 export interface GlobalState  {
   test: string;
-  modalWindow: string;
+  modalWindow: boolean;
 }
 
 export const INITIAL_GLOBAL_STATE: GlobalState = {
   test: undefined,
-  modalWindow: 'false'
+  modalWindow: false
 }

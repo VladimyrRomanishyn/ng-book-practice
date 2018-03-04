@@ -1,5 +1,5 @@
 <div class="modal"
-     [@modalWindow]="modalState">
+     [@modalWindow]="modalState$ | async">
   <div class="modal_container"
        (click)="closeModalWindow()">
   </div>

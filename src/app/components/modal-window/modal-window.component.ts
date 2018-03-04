@@ -33,15 +33,11 @@ import {
   ]
 })
 export class ModalWindowComponent implements OnInit {
-  modalState: string;
+  modalState$: Observable<boolean>;
 
   constructor(private store: Store<ApplicationState>) {
-    store.select( appState => appState.globalState.modalWindow)
-      .do(console.log)
-      .shareReplay()
-      .subscribe((modalState) => {
-        this.modalState = modalState;
-      });
+    this.modalState$ = store.select(appState => appState.globalState.modalWindow)
+      .shareReplay();
   }
 
   closeModalWindow(): void {
