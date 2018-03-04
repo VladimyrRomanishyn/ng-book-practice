@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers/index';
@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ModalWindowComponent } from './components/modal-window/modal-window.component';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/shareReplay';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,6 +28,7 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot(reducers),
     environment.development ? StoreDevtoolsModule.instrument(REDUX_DEV_TOOLS_OPTIONS) : [],
     TranslateModule.forRoot({

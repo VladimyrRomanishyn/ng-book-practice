@@ -10,11 +10,11 @@ export function globalReducer(state = INITIAL_GLOBAL_STATE, action: GlobalAction
       return newState;
 
     case OPEN_MODAL_WINDOW :
-      newState.modalWindow = true;
+      newState.modalWindow = 'true';
       return newState;
 
     case CLOSE_MODAL_WINDOW :
-      newState.modalWindow = false;
+      newState.modalWindow = 'false';
       return newState;
     default:
       return state;
