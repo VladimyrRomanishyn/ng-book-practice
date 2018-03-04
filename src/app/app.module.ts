@@ -11,6 +11,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
+import { ModalWindowComponent } from './components/modal-window/modal-window.component';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/do';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -18,7 +21,8 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModalWindowComponent
   ],
   imports: [
     BrowserModule,

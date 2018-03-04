@@ -1,0 +1,9 @@
+<div class="modal"
+     [ngClass]="{'modal_visible': modalState$ | async,
+                 'modal_invisible': !(modalState$ | async)}">
+  <div class="modal_container"
+       (click)="closeModalWindow()">
+  </div>
+  <div class="modal_close"
+       (click)="closeModalWindow()">x</div>
+</div>
